@@ -20,6 +20,7 @@ A minimal, production-like full-stack expense tracking application built for rel
 ## ⚖️ Trade-offs Made Due to Timebox
 * **Styling vs. Correctness:** Kept the UI styling minimal (Vanilla CSS) to heavily prioritize API resilience, data validation, and idempotency logic.
 * **Server-Side Pagination:** The `GET /expenses` endpoint currently returns all records. In a scaled environment, I would implement cursor-based pagination.
+* **Python 3.14 Compatibility:** Resolved a bleeding-edge compatibility issue between SQLAlchemy 2.0.29 and Python 3.14's new internal attributes by patching dependencies during deployment.
 
 ## 🛑 What was Intentionally Left Out
 * **Authentication/Authorization:** Left out to focus purely on the core expense logic.
