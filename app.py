@@ -106,3 +106,11 @@ def get_expenses(
         query = query.order_by(ExpenseModel.date.desc())
         
     return query.all()
+
+import os
+import uvicorn
+
+if __name__ == "__main__":
+    # Get the port Render provides, or default to 8000 locally
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
